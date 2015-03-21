@@ -9,7 +9,7 @@ namespace Coffe.Test
     {
         // Тест проверяет модуль с мусором
         [TestMethod]
-        public void TestMethod1()
+        public void GarbageModuleTest()
         {
             var garbageModule = new GarbageModule();
             // Модуль вмещает 30 единиц мусора
