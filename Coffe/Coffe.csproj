@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GarbageModuleIsFullException.cs" />
+    <Compile Include="GarbageModule.cs" />
     <Compile Include="IGarbageModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

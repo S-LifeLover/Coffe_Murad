@@ -3,6 +3,6 @@
     interface IGarbageModule
     {
         void Insert(int volume);
-        void Clean(int volume);
+        void Clean();
     }
 }
