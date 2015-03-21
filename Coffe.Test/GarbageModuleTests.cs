@@ -5,6 +5,7 @@ namespace Coffe.Test
 {
     [TestClass]
     public class GarbageModuleTests
+
     {
         // Тест проверяет модуль с мусором
         [TestMethod]
