@@ -26,16 +26,16 @@ namespace Coffe.Test
                 coffeeModule.Delete(10);
 
                 // Если мы дошли сюда, значит исключения не возникло. А должно было
-                Assert.Fail("CoffeeModuleIsFullException is excepted");
+                Assert.Fail("CoffeeModuleIsEmptyException is excepted");
             }
-            catch (CoffeeModuleIsFullException)
+            catch (CoffeeModuleIsEmptyException)
             {
                 // Ожидаемое исключение. Все хорошо
             }
             catch (Exception)
             {
                 // Неожиданное исключение. Что-то пошло не так
-                Assert.Fail("CoffeeModuleIsFullException is excepted");
+                Assert.Fail("CoffeeModuleIsEmptyException is excepted");
             }
 
             // После наполнения из модуля снова должно расходоваться 100 едениц кофе

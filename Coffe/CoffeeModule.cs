@@ -6,7 +6,7 @@
         public void Delete(int volume)
         {
             if (_coffee - volume < 0)
-                throw new CoffeeModuleIsFullException();
+                throw new CoffeeModuleIsEmptyException();
             _coffee = _coffee - volume;
         }
 

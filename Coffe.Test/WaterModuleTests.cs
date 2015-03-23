@@ -27,16 +27,16 @@ namespace Coffe.Test
                 waterModule.Delete(10);
 
                 // Если мы дошли сюда, значит исключения не возникло. А должно было
-                Assert.Fail("WaterModuleIsFullException is excepted");
+                Assert.Fail("WaterModuleIsEmptyException is excepted");
             }
-            catch (WaterModuleIsFullException)
+            catch (WaterModuleIsEmptyException)
             {
                 // Ожидаемое исключение. Все хорошо
             }
             catch (Exception)
             {
                 // Неожиданное исключение. Что-то пошло не так
-                Assert.Fail("WaterModuleIsFullException is excepted");
+                Assert.Fail("WaterModuleIsEmptyException is excepted");
             }
 
             // После наполнения из модуля сново должно выливаться 50 единиц воды

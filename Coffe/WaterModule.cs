@@ -6,7 +6,7 @@
         public void Delete(int volume)
         {
             if (_water - volume < 0)
-                throw new WaterModuleIsFullException();
+                throw new WaterModuleIsEmptyException();
             _water = _water - volume;
         }
 
