@@ -50,6 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CoffeeModuleTests.cs" />
+    <Compile Include="WaterModuleTests.cs" />
     <Compile Include="GarbageModuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

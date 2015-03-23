@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeModule.cs" />
+    <Compile Include="ICoffeeModule.cs" />
+    <Compile Include="CoffeeModuleIsFullException.cs" />
+    <Compile Include="WaterModuleIsFullException.cs" />
+    <Compile Include="IGarbageModule.cs" />
+    <Compile Include="WaterModule.cs" />
     <Compile Include="GarbageModuleIsFullException.cs" />
     <Compile Include="GarbageModule.cs" />
-    <Compile Include="IGarbageModule.cs" />
+    <Compile Include="IWaterModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

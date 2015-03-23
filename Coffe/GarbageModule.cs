@@ -2,17 +2,17 @@
 {
     public sealed class GarbageModule : IGarbageModule
     {
-        private int _coffee;
+        private int _musor;
         public void Insert(int volume)
         {
-            if (_coffee + volume > 30)
+            if (_musor + volume > 30)
                 throw new GarbageModuleIsFullException();
-            _coffee = _coffee + volume;
+            _musor = _musor + volume;
         }
 
         public void Clean()
         {
-            _coffee = 0;
+            _musor = 0;
         }
     }
 }
