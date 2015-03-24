@@ -1,6 +1,6 @@
 ﻿namespace Coffe
 {
-    interface IGarbageModule
+    public interface IGarbageModule
     {
         void Insert(int volume);
 

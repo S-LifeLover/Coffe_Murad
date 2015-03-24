@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -50,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MainModuleTests.cs" />
     <Compile Include="CoffeeModuleTests.cs" />
     <Compile Include="WaterModuleTests.cs" />
     <Compile Include="GarbageModuleTests.cs" />
@@ -60,6 +64,9 @@
       <Project>{8D48CAB2-77B1-470E-85A3-341E8CD3BEE6}</Project>
       <Name>Coffe</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,6 +1,6 @@
 ﻿namespace Coffe
 {
-    interface IWaterModule
+    public interface IWaterModule
     {
         void Delete(int volume);
 

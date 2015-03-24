@@ -1,6 +1,6 @@
 ﻿namespace Coffe
 {
-    interface ICoffeeModule
+    public interface ICoffeeModule
     {
         void Delete(int volume);
 
