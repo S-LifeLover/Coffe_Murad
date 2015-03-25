@@ -19,5 +19,22 @@ namespace Coffe.Test
             // Проверяем, что наш главный модуль действительно вызвал метод Fill() у модуля с водой
             waterModule.Verify(wm => wm.Fill());
         }
+    
+        [TestMethod]
+        public void FillCoffeeTest()
+        {
+            var coffeeModule = new Mock<ICoffeeModule>();
+            var mainModule = new MainModule(coffeeModule.Object);
+            mainModule.FillCoffee();
+            coffeeModule.Verify(cm => cm.Fill());
+        }
+        [TestMethod]
+        public void CleanGarbageTest()
+        {
+            var garbageModule = new Mock<IGarbageModule>();
+            var mainModule = new MainModule(garbageModule.Object);
+            mainModule.CleanGarbage();
+            garbageModule.Verify(gm => gm.Clean());
+        }
     }
 }
