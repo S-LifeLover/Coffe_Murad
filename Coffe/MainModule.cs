@@ -5,27 +5,14 @@
         private readonly IWaterModule _waterModule;
         private readonly ICoffeeModule _coffeeModule;
         private readonly IGarbageModule _garbageModule;
-        public MainModule(IWaterModule waterModule)
-        {
-            _waterModule = waterModule;
-        }
 
         public void FillWater()
         {
             _waterModule.Fill();
         }
-        
-        public MainModule(ICoffeeModule coffeeModule)
-        {
-            _coffeeModule = coffeeModule;
-        }
         public void FillCoffee()
         {
             _coffeeModule.Fill();
-        }
-        public MainModule(IGarbageModule garbageModule)
-        {
-            _garbageModule = garbageModule;
         }
         public void CleanGarbage()
         {
