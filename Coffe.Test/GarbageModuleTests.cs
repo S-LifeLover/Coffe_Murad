@@ -13,9 +13,9 @@ namespace Coffe.Test
         {
             var garbageModule = new GarbageModule();
             // Модуль вмещает 30 единиц мусора
-            garbageModule.Insert(10);
-            garbageModule.Insert(10);
-            garbageModule.Insert(10);
+            garbageModule.Insert(50);
+            garbageModule.Insert(50);
+            garbageModule.Insert(50);
 
             try
             {
@@ -37,9 +37,9 @@ namespace Coffe.Test
 
             // После очистки в модуль снова должно влезть 30 единиц мусора
             garbageModule.Clean();
-            garbageModule.Insert(10);
-            garbageModule.Insert(10);
-            garbageModule.Insert(10);
+            garbageModule.Insert(50);
+            garbageModule.Insert(50);
+            garbageModule.Insert(50);
         }
     }
 }

@@ -22,8 +22,6 @@ namespace Coffe.Test
             coffeeModule.Verify(cm => cm.Fill());
             mainModule.CleanGarbage();
             garbageModule.Verify(gm => gm.Clean());
-
-
         }
         [TestMethod]
         public void MakeCoffeeTest()

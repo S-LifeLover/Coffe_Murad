@@ -15,11 +15,11 @@ namespace Coffe.Test
             //перед тестом наполним отсек кофе
             coffeeModule.Fill();
             // Модуль содержит 100 единиц кофе, расходуем его
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
             try
             {
                 // Если отсек пуст, больше кофе мы взять не сможем
@@ -40,11 +40,11 @@ namespace Coffe.Test
 
             // После наполнения из модуля снова должно расходоваться 100 едениц кофе
             coffeeModule.Fill();
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
-            coffeeModule.Delete(20);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
+            coffeeModule.Delete(40);
 
         }
     }
