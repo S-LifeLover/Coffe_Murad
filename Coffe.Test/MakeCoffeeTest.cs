@@ -7,28 +7,16 @@ namespace Coffe.Test
     public class MakeCoffeeTests
     {
         [TestMethod]
-        public void DeleteWaterTest()
+        public void MakeCoffeeTest()
         {           
             var waterModule = new Mock<IWaterModule>();
-            var mainModule = new MainModule(waterModule.Object);
-            mainModule.DeleteWater();
-            waterModule.Verify(wm => wm.Delete(10));
-        }
-        [TestMethod]
-        public void DeleteCoffeeTest()
-        {
             var coffeeModule = new Mock<ICoffeeModule>();
-            var mainModule = new MainModule(coffeeModule.Object);
-            mainModule.DeleteCoffee();
-            coffeeModule.Verify(cm => cm.Delete(20));
-        }
-        [TestMethod]
-        public void InsertGarbageTest()
-        {
-            //asfasfasfasdf
             var garbageModule = new Mock<IGarbageModule>();
-            var mainModule = new MainModule(garbageModule.Object);
-            mainModule.InsertGarbage();
+            var mainModule = new MainModule(waterModule.Object, garbageModule.Object, coffeeModule.Object);
+
+            mainModule.MakeCoffee(waterModule.Object, garbageModule.Object, coffeeModule.Object);
+            waterModule.Verify(wm => wm.Delete(10));
+            coffeeModule.Verify(cm => cm.Delete(20));
             garbageModule.Verify(gm => gm.Insert(10));
         }
     }

@@ -14,10 +14,7 @@
         {
             _waterModule.Fill();
         }
-        public void DeleteWater()
-       {
-           _waterModule.Delete(10);
-        }
+        
         public MainModule(ICoffeeModule coffeeModule)
         {
             _coffeeModule = coffeeModule;
@@ -26,11 +23,6 @@
         {
             _coffeeModule.Fill();
         }
-        public void DeleteCoffee()
-        {
-            _coffeeModule.Delete(20);
-        }
-
         public MainModule(IGarbageModule garbageModule)
         {
             _garbageModule = garbageModule;
@@ -39,8 +31,16 @@
         {
             _garbageModule.Clean();
         }
-        public void InsertGarbage()
+        public MainModule(IWaterModule waterModule, IGarbageModule garbageModule, ICoffeeModule coffeeModule)
         {
+            _waterModule = waterModule;
+            _coffeeModule = coffeeModule;
+            _garbageModule = garbageModule;
+        }
+        public void MakeCoffee(IWaterModule waterModule, IGarbageModule garbageModule, ICoffeeModule coffeeModule)
+        {
+            _waterModule.Delete(10);
+            _coffeeModule.Delete(20);
             _garbageModule.Insert(10);
         }
     }
