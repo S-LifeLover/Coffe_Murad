@@ -12,7 +12,7 @@
 
         public void Fill()
         {
-            _coffee = 100;
+            _coffee = 200;
         }
     }
 }
