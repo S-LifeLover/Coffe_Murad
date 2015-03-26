@@ -5,7 +5,7 @@
         private int _musor;
         public void Insert(int volume)
         {
-            if (_musor + volume > 30)
+            if (_musor + volume > 150)
                 throw new GarbageModuleIsFullException();
             _musor = _musor + volume;
         }
