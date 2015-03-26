@@ -55,7 +55,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MakeCoffeeTest.cs" />
     <Compile Include="MainModuleTests.cs" />
     <Compile Include="CoffeeModuleTests.cs" />
     <Compile Include="WaterModuleTests.cs" />

@@ -37,7 +37,7 @@
             _coffeeModule = coffeeModule;
             _garbageModule = garbageModule;
         }
-        public void MakeCoffee(IWaterModule waterModule, IGarbageModule garbageModule, ICoffeeModule coffeeModule)
+        public void MakeCoffee()
         {
             _waterModule.Delete(10);
             _coffeeModule.Delete(20);
