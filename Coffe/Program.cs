@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Coffe
 {
@@ -12,31 +8,35 @@ namespace Coffe
         {
             //Задаем переменные и объекты
             // объект для работы с отсеком кофе
-            var coffee = new CoffeeModule(); 
+            var coffee = new CoffeeModule();
             // объект для работы с отсеком воды
             var water = new WaterModule();
             // объект для работы с отсеком жмыха
             var gmih = new GarbageModule();
             // объект для работы с переменными объема кофе, жмыха, воды в кофеварке
-            var c = new MainModule(water, gmih, coffee);          
+            var c = new MainModule(water, gmih, coffee);
             // переменная для выполнения действий кофеварки
-            byte index; 
+            int index;
             // переменная для вывода сообщения после успешной варки кофе (чтобы не повторялась в коде)
-            string s = "Кофеварка: Ваш кофе готов! Выберите действие: 1 - сварить кофе, 2 - насыпать кофе, 3 - налить воды, 4 - очистить отсек для жмыха";
+            string s = "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage";
             //стартовый вывод
-            Console.WriteLine("Кофеварка: Готов к работе. Выберите действие: 1 - сварить кофе, 2 - насыпать кофе, 3 - налить воды, 4 - очистить отсек для жмыха");
-            // да да=) я использовал goto, грешен, каюсь=)
+            Console.WriteLine("Ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage");
+        // да да=) я использовал goto, грешен, каюсь=)
         start:
             // перевод команды в число, заодно и проверка от неверных команд, ведь пользователи так любят ломать вещи
-            byte.TryParse(Console.ReadLine(),out index); 
-            if ((index != 1) && (index != 2) && (index != 3) && (index != 4)) index = 0;
+            int.TryParse(Console.ReadLine(), out index);
+            if (index < 0 || index > 4)
+                index = -1;
             // собственно эта часть кода и управляет кофеваркой
             switch (index)
             {
-                case 0:
+                case -1:
                     // если index 0, то значит ввели что-то отличное от команды
-                    Console.WriteLine("Кофеварка: Введенная вами команда неверна, внимательно прочитайте инструкцию");
-                    goto start;                   
+                    Console.WriteLine("Wrong Command");
+                    goto start;
+                case 0:
+                    Environment.Exit(0);
+                    break;
                 case 1:
                     try
                     {
@@ -44,20 +44,20 @@ namespace Coffe
                     }
                     catch (CoffeeModuleIsEmptyException)
                     {
-                        Console.WriteLine("Кофеварка: Невозможно сварить кофе, отсек с кофе пуст!");
+                        Console.WriteLine("No  coffe");
                         goto start;
                     }
                     catch (WaterModuleIsEmptyException)
                     {
-                        Console.WriteLine("Кофеварка: Невозможно сварить кофе, отсек с водой пуст!");
+                        Console.WriteLine("No water");
                         goto start;
                     }
                     catch (GarbageModuleIsFullException)
                     {
-                        Console.WriteLine("Кофеварка: Невозможно сварить кофе, отсек с мусором полон! ");
+                        Console.WriteLine("A lot of garbage");
                         goto start;
-                    }                  
-                        Console.WriteLine(s);
+                    }
+                    Console.WriteLine(s);
                     goto start;
                 case 2:
                     // если команда 2, то заполняем отсек кофе (я взял за максимум 10, то есть полный отсек кофе хватит на 10 чашек)
@@ -70,8 +70,8 @@ namespace Coffe
                 case 4:
                     // если команда 4, то чистим отсек жмыха 
                     c.CleanGarbage();
-                    goto start;                 
+                    goto start;
             }
         }
-    }  
+    }
 }

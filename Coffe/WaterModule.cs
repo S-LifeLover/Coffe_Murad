@@ -12,7 +12,7 @@
 
         public void Fill()
         {
-            _water = 50;
+            _water = 200;
         }
     }
 }
