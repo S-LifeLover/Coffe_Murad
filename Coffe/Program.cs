@@ -1,4 +1,5 @@
 ﻿using System;
+using Ninject;
 
 namespace Coffe
 {
@@ -6,15 +7,9 @@ namespace Coffe
     {
         static void Main(string[] args)
         {
-            //Задаем переменные и объекты
-            // объект для работы с отсеком кофе
-            var coffee = new CoffeeModule();
-            // объект для работы с отсеком воды
-            var water = new WaterModule();
-            // объект для работы с отсеком жмыха
-            var gmih = new GarbageModule();
-            // объект для работы с переменными объема кофе, жмыха, воды в кофеварке
-            var c = new MainModule(water, gmih, coffee);
+            var appKernel = new StandardKernel(new CoffeNinjectModule());
+
+            var mainModule = appKernel.Get<MainModule>();
             // переменная для выполнения действий кофеварки
             int index;
             // переменная для вывода сообщения после успешной варки кофе (чтобы не повторялась в коде)
@@ -39,7 +34,7 @@ namespace Coffe
                 case 1:
                     try
                     {
-                        c.MakeCoffee();
+                        mainModule.MakeCoffee();
                     }
                     catch (CoffeeModuleIsEmptyException)
                     {
@@ -60,15 +55,15 @@ namespace Coffe
                     goto start;
                 case 2:
                     // если команда 2, то заполняем отсек кофе
-                    c.FillCoffee();
+                    mainModule.FillCoffee();
                     goto start;
                 case 3:
                     // если команда 3, то заполняем отсек воды
-                    c.FillWater();
+                    mainModule.FillWater();
                     goto start;
                 case 4:
                     // если команда 4, то чистим отсек жмыха 
-                    c.CleanGarbage();
+                    mainModule.CleanGarbage();
                     goto start;
             }
         }
