@@ -14,17 +14,17 @@ namespace Coffe.Test
             var waterModule = new WaterModule();
             //перед тестом наполним отсек водой
             waterModule.Fill();
-            // Модуль содержит 50 единиц воды, "выливаем ее"
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
+            // Модуль содержит 200 единиц воды, "выливаем ее"
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
 
             try
             {
                 // Из пустого уже не выльешь
-                waterModule.Delete(10);
+                waterModule.Delete(40);
 
                 // Если мы дошли сюда, значит исключения не возникло. А должно было
                 Assert.Fail("WaterModuleIsEmptyException is excepted");
@@ -41,11 +41,11 @@ namespace Coffe.Test
 
             // После наполнения из модуля сново должно выливаться 50 единиц воды
             waterModule.Fill();
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
-            waterModule.Delete(10);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
+            waterModule.Delete(40);
         }
     }
 }
