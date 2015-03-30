@@ -19,6 +19,7 @@ namespace Coffe.Test
             // Кстати, обрати внимание, для чего нужен using
             using (var proc = Process.Start(start))
             {
+                string s = "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage";
                 var line1 = proc.StandardOutput.ReadLine();
                 Assert.AreEqual(
                     "Ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
@@ -40,33 +41,23 @@ namespace Coffe.Test
                 proc.StandardInput.WriteLine("2");
                 proc.StandardInput.WriteLine("1");
                 var line4 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line4);
+                Assert.AreEqual(s, line4);
 
                 proc.StandardInput.WriteLine("1");
                 var line5 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line5);
+                Assert.AreEqual(s, line5);
 
                 proc.StandardInput.WriteLine("1");
                 var line6 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line6);
+                Assert.AreEqual(s, line6);
 
                 proc.StandardInput.WriteLine("1");
                 var line7 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line7);
+                Assert.AreEqual(s, line7);
 
                 proc.StandardInput.WriteLine("1");
                 var line8 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line8);
+                Assert.AreEqual(s, line8);
 
                 proc.StandardInput.WriteLine("1");
                 var line9= proc.StandardOutput.ReadLine();
@@ -77,9 +68,7 @@ namespace Coffe.Test
                 proc.StandardInput.WriteLine("4");
                 proc.StandardInput.WriteLine("1");
                 var line10 = proc.StandardOutput.ReadLine();
-                Assert.AreEqual(
-                    "Coffe is ready. Select command: 1 - make coffe, 2 - load coffe, 3 - load water, 4 - remove garbage",
-                    line10);
+                Assert.AreEqual(s,line10);
 
                 proc.StandardInput.WriteLine("0");
                 proc.WaitForExit();
