@@ -31,7 +31,6 @@ namespace Coffe
             switch (index)
             {
                 case -1:
-                    // если index 0, то значит ввели что-то отличное от команды
                     Console.WriteLine("Wrong Command");
                     goto start;
                 case 0:
@@ -60,11 +59,11 @@ namespace Coffe
                     Console.WriteLine(s);
                     goto start;
                 case 2:
-                    // если команда 2, то заполняем отсек кофе (я взял за максимум 10, то есть полный отсек кофе хватит на 10 чашек)
+                    // если команда 2, то заполняем отсек кофе
                     c.FillCoffee();
                     goto start;
                 case 3:
-                    // если команда 3, то заполняем отсек воды (взял за максимум 5, так как воды для чашки нужно больше, чем кофе)
+                    // если команда 3, то заполняем отсек воды
                     c.FillWater();
                     goto start;
                 case 4:
